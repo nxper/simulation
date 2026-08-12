@@ -46,16 +46,32 @@ for column in range(column_ammount):
 
         box.grid(row=row, column=column, padx=2, pady=2)
 
-        button = tk.Button(box, bg="white", width="20", height="20")
-
-        button.place(relheight=1, relwidth=1)
+     
         y = row
         x = column
+
+    
+
+
+        grid_coords[(x, y)] = box
+
+def placeButtons():
+    for column in range(column_ammount):
+        for row in range(row_ammount):
+         button = tk.Button(box, bg="white", width="20", height="20")
+
+         button.place(relheight=1, relwidth=1)
+         y = row
+         x = column
 
         gridbutton_coords[(x, y)] = button
 
 
-        grid_coords[(x, y)] = box
+
+
+def hidebutton():
+    print("Hiding buttons")
+
 
 gridbutton_coords[(3, 1)].configure(bg="blue")
 grid_coords[(2, 2)].configure(bg="red")
